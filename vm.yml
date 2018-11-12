@@ -54,7 +54,7 @@
       ssh_password_enabled: false
       ssh_public_keys:
         - path: /home/azureops/.ssh/authorized_keys
-          key_data: 
+          key_data: |
             {{ lookup('file', '/home/azureops/.ssh/id_rsa.pub')}}
       network_interfaces: table4msnic
       image:
