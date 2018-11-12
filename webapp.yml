@@ -1,0 +1,27 @@
+- hosts: localhost
+  connection: local
+  vars:
+    group: table4mswebapprg
+    webapp_name: table4mswebapp
+    location: australiaeast
+  tasks:
+  - name: create rg
+    azure_rm_resourcegroup:
+      name: "{{group}}"
+      location: "{{location}}"
+  - name: create APP Svc
+    azure_rm_webapp:
+      resource_group: "{{group}}"
+      name: "{{webapp_name}}"
+      plan:
+        resourcegroup: "{{group}}"
+        name: table4msappplan
+        is_linux: true
+        sku: S1
+        number_of_workers: 1
+      frameworks:
+        - name: "java"
+          version: "8"
+          settings:
+            java_container: "Tomcat"
+            java_container_version: "8.5"
