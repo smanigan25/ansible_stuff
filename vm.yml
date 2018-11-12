@@ -58,7 +58,7 @@
             {{ lookup('file', '/home/azureops/.ssh/id_rsa.pub')}}
       network_interfaces: table4msnic
       image:
-        offer: Ubuntults
+        offer: UbuntuServer
         publisher: Canonical
-        sku: '16.04'
+        sku: '16.04-LTS'
         version: latest
