@@ -8,7 +8,7 @@
       location: australiaeast
   - name: Create virtual network
     azure_rm_virtualnetwork:
-      resource_group: table4msrg
+      resource_group: table4msvmrg
       name: table4msVnet
       address_prefixes: "10.0.0.0/16"
   - name: Add subnet
