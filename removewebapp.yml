@@ -1,0 +1,12 @@
+- hosts: localhost
+  connection: local
+  vars:
+    group: table4mswebapprg
+    webapp_name: table4mswebapp
+    location: australiaeast
+  tasks:
+   - name: create rg
+     azure_rm_resourcegroup:
+        name: "{{group}}"
+        state: absent
+        force: true
