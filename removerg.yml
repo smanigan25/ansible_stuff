@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: Create a resource
+      azure_rm_resourcegroup:
+        name: table4msansibletest
+        state: absent
