@@ -14,7 +14,7 @@
   - name: Add subnet
     azure_rm_subnet:
       resource_group: table4msvmrg
-      name: table7msSubnet
+      name: table4msSubnet
       address_prefix: "10.0.1.0/24"
       virtual_network: table4msVnet
   - name: Create public IP address
