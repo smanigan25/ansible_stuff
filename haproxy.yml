@@ -1,7 +1,7 @@
-- hosts: web
+- hosts: azure
   gather_facts: true
 
-- hosts: haproxy
+- hosts: azure
   become: true
   tasks:
     - name: Installs haproxy load balancer

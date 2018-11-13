@@ -1,4 +1,4 @@
-- hosts: web
+- hosts: azure
   become: true
   tasks:
     - name: Installs apache web server
