@@ -1,0 +1,11 @@
+- name: Create  VM
+  hosts: localhost
+  connection: local
+  vars_files:
+    - vars.yml
+  tasks:
+  - name: Create resource group
+    azure_rm_resourcegroup:
+      name: "{{ group_name }}"
+      state: absent
+      force: true
