@@ -2,5 +2,5 @@ prefix: table4ms
 group_name: "{{prefix}}vmrg"
 vnet: "{{prefix}}vnet"
 nsg_name: "{{prefix}}secgroup"
-subet_name: "{{prefix}}subnet"
+subnet_name: "{{prefix}}subnet"
 nic_name: "{{prefix}}nic"
