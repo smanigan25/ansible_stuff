@@ -3,9 +3,13 @@
   tasks:
     - name: Installs apache web server
       apt:
-        pkg: apache2
+        pkg: "{{item}}"
         state: present
         update_cache: true
+      with_items:
+        - apache2
+        - libapache2-mod-php
+        - git
     - name: Push default virtual host configuration
       copy:
         src: files/awesome-app.conf
@@ -33,7 +37,10 @@
         state: link
       notify:
         - restart apache
-
+    - name: deploy app
+      git:
+        repo: https://github.com/jwkidd3/theapp
+        dest: /var/www/awesome-app
   handlers:
     - name: restart apache
       service:
