@@ -30,7 +30,7 @@
           access: Allow
           priority: 1001
           direction: Inbound
-       - name: SSH
+        - name: Apache
           protocol: Tcp
           destination_port_range: 80
           access: Allow
