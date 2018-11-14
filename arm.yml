@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  gather_facts: yes
+  connection: local
+  tasks:
+    - name: Create a resource
+      azure_rm_resourcegroup:
+        name: table4mswebapprg
+        location: australiaeast
+        tags:
+          testing: testing
+          delete: never
+    - name: Arm Deploy
+      azure_rm_deployment:
+        state: present
+        resource_group_name: table4mswebapprg
+        template_link: 'https://raw.githubusercontent.com/smanigan25/WebApp/master/template.json'
+        parameters_link: 'https://raw.githubusercontent.com/smanigan25/WebApp/master/parameters.json'
